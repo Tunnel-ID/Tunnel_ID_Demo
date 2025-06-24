@@ -1,6 +1,6 @@
 # Tunnel_ID
-TunnelID is a decentralized identity engine for the autonomous internet. It allows both humans and AI agents to authenticate and prove credentials biometrically, pseudonymously, and privately, without revealing or storing sensitive data.
-This demo showcases how a user can generate cryptography keys with their facial data.
+TunnelID is a decentralized identity engine for the autonomous internet. It enables both humans and AI agents to authenticate and verify credentials biometrically, pseudonymously, and privately, without disclosing or storing sensitive data.
+This demo illustrates how a user can generate cryptographic keys using their facial data.
 # How to Run?
 1. Clone the Repo
    ```
@@ -9,16 +9,14 @@ This demo showcases how a user can generate cryptography keys with their facial 
    ```
 2. Running the Frontend
    ```
-   cd Frontend
+cd Frontend
 npm install
 npm run dev     # Start dev server at http://localhost:5173
 ```
 3. Running the Backend
 ```
-cd Backend
-python3 -m venv venv
-source venv/bin/activate
 pip install -r requirements.txt
-python applic.py  # Starts backend at http://localhost:5001
+python -m linear_sketch.applic # Starts backend at http://localhost:5001
 ```
+### Visit http://localhost:5001 and create keys with your biometrics
 
