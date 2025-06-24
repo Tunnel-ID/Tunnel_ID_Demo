@@ -3,13 +3,10 @@ TunnelID is a decentralized identity engine for the autonomous internet. It enab
 This demo illustrates how a user can generate cryptographic keys using their facial data.
 # How to Run?
 1. Clone the Repo
-   ```
-   git clone https://github.com/your-org/Tunnel-ID.git
-    cd Tunnel-ID
-   ```
+   ```git clone https://github.com/your-org/Tunnel-ID.git
+    cd Tunnel-ID```
 2. Running the Frontend
-   ```
-cd Frontend
+   ```cd Frontend
 npm install
 npm run dev     # Start dev server at http://localhost:5173
 ```
