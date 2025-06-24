@@ -1,0 +1,39 @@
+/* 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f1624, #0a0d15);
+  color: white;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.hero-section {
+  text-align: center;
+  margin-top: 15vh;
+}
+
+.grid-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #13133a 0%, black 90%);
+  z-index: -1;
+} */
+* {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}

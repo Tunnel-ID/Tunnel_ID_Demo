@@ -1,0 +1,15 @@
+{
+  "name": "tunnelid_core",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "tunnelid_core_bg.wasm",
+    "tunnelid_core.js",
+    "tunnelid_core.d.ts"
+  ],
+  "main": "tunnelid_core.js",
+  "types": "tunnelid_core.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

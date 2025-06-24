@@ -1,0 +1,203 @@
+/* About Page Specific Styles */
+.about-page {
+  max-width: 1200px; /* Constrain width to 1200px */
+  margin: 0 auto; /* Center the content */
+  padding: 40px 20px;
+  animation: fadeIn 1s ease-in-out;
+  background-color: rgb(249, 249, 249);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.brand-logo1 {
+  width: 130px;
+  height: 140px;
+  margin-right: 20px;
+  margin-top: -3pc;
+  margin-left: -190px;
+}
+
+.logo-name1 {
+  font-size: 34px;
+  color: #000;
+  margin: 0;
+  margin-left: -4pc;
+    margin-top: -3pc;
+}
+
+.intro-section {
+  margin-top: 40px;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.text-content {
+  max-width: 100%;
+  margin-top: -2pc;
+}
+
+.text-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 20px
+}
+
+.benefits-section {
+  margin-top: 28px;
+}
+
+.benefits-grid {
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: space-between; /* Distribute space between cards */
+  gap: 20px; /* Space between cards */
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.benefit-card {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Reduced border radius for rectangular shape */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  flex: 1; /* Distribute available space equally among cards */
+  min-width: 0; /* Allow cards to shrink if necessary */
+  height: 120px; /* Fixed height for rectangular shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Animation */
+.benefit-card:hover {
+  transform: scale(1.5); /* Scale the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Bring the hovered card to the front */
+}
+
+/* Optional: Add a smooth transition for the hover effect */
+.benefit-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+}
+
+.meaning-section {
+  margin-top: 60px;
+}
+
+.meaning-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.meaning-section p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 20px
+}
+
+.try-it-out-section {
+  margin-top: 40px;
+}
+
+.try-it-out-link {
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.try-it-out-link:hover {
+  text-decoration: underline;
+  color: #333;
+}
+
+.newsletter-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.newsletter-form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .benefits-grid {
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    justify-content: center; /* Center cards */
+  }
+
+  .benefit-card {
+    flex: 1 1 calc(50% - 20px); /* Two cards per row on medium screens */
+    height: 100px; /* Adjust card height for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .benefit-card {
+    flex: 1 1 100%; /* One card per row on small screens */
+    height: 80px; /* Further adjust card height for very small screens */
+    font-size: 14px; /* Further adjust font size for very small screens */
+  }
+}
+.key{
+  margin-bottom: 36px
+}

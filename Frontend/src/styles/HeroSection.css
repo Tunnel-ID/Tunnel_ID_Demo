@@ -1,0 +1,562 @@
+/* HeroSection.css */
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background-color: rgb(220 222 217); /* Light gray background */
+  color: #000; /* Black text */
+  padding-top: 110px; /* Add padding to avoid overlap with navbar */
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px 30px; /* Increased horizontal padding */
+  position: fixed;
+  top: -40px;
+  background-color: rgb(220 222 217); /* Semi-transparent light gray */
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgb(220 222 217);
+}
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 150px; /* Increased logo size */
+  margin-right: 15px; /* Adjust spacing */
+  background-color: rgb(220, 222, 217); /* Background color */
+  padding: 8px; /* Slightly more padding */
+  border-radius: 12px; /* Rounded corners */
+  transition: transform 0.3s ease-in-out; /* Smooth scaling animation */
+  display: inline-block; /* Prevent overlap by keeping it in its place */
+  margin-top: 20px;
+  margin-left: -53px;
+}
+
+/* .brand-logo:hover {
+  transform: scale(1.2); /* Enlarge the logo by 20% on hover */
+ 
+
+
+/* .brand-logo:hover {
+  background-color: #ffffff; /* Darker background on hover */
+
+.brand-name {
+  font-size: 35px;
+  font-weight: bold;
+  color: #000; /* Black text */
+  font-weight: 700;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.get-id-button, .login-button1 {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+  color: #000; /* Black text */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  white-space: nowrap; /* Ensure text stays in one line */
+  font-weight: 500;
+}
+
+.get-id-button:hover, .login-button1:hover {
+  background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff, #ff0000);
+  background-size: 400% 400%;
+  animation: radiant 3s ease infinite;
+  color: #fff; /* White text on hover */
+  border: 1px solid transparent; /* Remove border on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+@keyframes radiant {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.get-id-button:active, .login-button:active {
+  transform: translateY(0); /* Reset lift effect on click */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow on click */
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 80px; /* Adjust based on navbar height */
+  margin-right: 120px;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.orbital-image {
+  max-width: 100%;
+  height: auto;
+  height: 398px;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  color: #000; /* Black text */
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #424345; /* Dark gray text for description */
+  font-weight: 500;
+ 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+}
+/* HeroSection.css */
+
+/* Existing styles... */
+
+
+/* HeroSection.css */
+
+/* Existing styles... */
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  align-items: center; /* Align buttons and options vertically */
+}
+
+.options-button {
+  padding: 10px;
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+  color: #000; /* Black text */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.options-button:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+.options-icon {
+  font-size: 24px; /* Size of the hamburger icon */
+}
+
+/* Full-page dropdown overlay */
+/* HeroSection.css */
+
+/* Existing styles... */
+
+/* Dropdown Overlay */
+.dropdown-overlay {
+  position: fixed;
+  top: -100%; /* Start off-screen */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* White background */
+  z-index: 1000; /* Ensure it's above other elements */
+  transition: top 0.5s ease; /* Smooth slide-down animation */
+}
+
+.dropdown-overlay.open {
+  top: 0; /* Slide down to visible position */
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeIn 0.5s ease; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  position: relative; /* Needed for the ::after pseudo-element */
+  padding: 15px 20px;
+  color: #000; /* Black text */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 40px;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Light hover effect */
+}
+
+/* Animated line on hover */
+.dropdown-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000; /* Black line */
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.dropdown-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Transparent Button */
+.transparent-button {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  background-color: transparent; /* Transparent background */
+  color: #000; /* Black text */
+  font-size: 26px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px; /* Space above the button */
+}
+
+.transparent-button:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Light hover effect */
+  border-color: rgba(0, 0, 0, 0.2); /* Slightly darker border on hover */
+}
+/* Responsive Styles for Phone Users */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero-section {
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    margin-top: 100px; /* Account for fixed navbar */
+  }
+
+  .text-content {
+    max-width: 100%; /* Allow full width for content */
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+
+  .brand-logo {
+    height: 40px;
+  }
+
+  /* Buttons */
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .get-id-button, 
+  .login-button1, 
+  .options-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    width: 100%; /* Full width for easier interaction */
+  }
+
+  .dropdown-content {
+    width: 90%; /* Reduce dropdown width on mobile */
+  }
+
+  /* Dropdown */
+  .dropdown-item {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* Image Adjustments */
+  .image-container {
+    width: 100%;
+    order: -1; /* Move image to the top */
+  }
+
+  .orbital-image {
+    width: 100%;
+  }
+}
+
+.des{
+  color: #1736f5;
+  display: inline-block;
+  padding-left: 8px;
+}
+.des1{
+  color: #1736f5;
+  display: inline-block;
+  /* padding-left: 8px; */
+} 
+.logo-name{
+  display: inline-block;
+  margin-left: -65px;
+  margin-top: 18px;
+}
+/* MetaMask Popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+  width: 300px;
+}
+
+.popup p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.popup button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.popup button:first-child {
+  background: #ff914d;
+  color: white;
+}
+
+.popup button:first-child:hover {
+  background: #e57c39;
+}
+
+.popup button:last-child {
+  background: #ddd;
+  color: #333;
+}
+
+.popup button:last-child:hover {
+  background: #bbb;
+}
+/* Responsive Styles for Mobile Phones (Max Width: 414px) */
+@media (max-width: 414px) {
+  /* Hero Section */
+  .hero-section {
+    height: 90vh; /* Maintain same height as laptop */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    flex-direction: row; /* Keep layout similar to laptop */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .text-content {
+    max-width: 600px;
+    text-align: left;
+    padding: 0 15px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: rgb(220, 222, 217);
+    z-index: 1000;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .brand-logo {
+    height: 100px; /* Maintain relative size */
+    margin-left: 0;
+  }
+
+  .brand-name {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  /* Buttons */
+  .button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .get-id-button, 
+  .login-button1, 
+  .options-button {
+    padding: 10px 18px;
+    font-size: 14px;
+    width: auto; /* Keep width auto like laptop view */
+  }
+
+  /* Dropdown */
+  .dropdown-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .dropdown-item {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  /* Image Adjustments */
+  .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .orbital-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* MetaMask Popup */
+  .popup {
+    width: 300px;
+    padding: 20px;
+  }
+
+  .popup p {
+    font-size: 18px;
+  }
+
+  .popup button {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  /* Logo Adjustments */
+  .logo-name {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  /* Description Text */
+  .des, .des1 {
+    font-size: 16px;
+  }
+}
+
+

@@ -1,0 +1,62 @@
+.facial-verification-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .facial-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .facial-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .facial-input:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .verify-btn {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .verify-btn:hover {
+    background: #0056b3;
+  }
+  
+  .message {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .success {
+    color: green;
+  }
+  
+  .failure {
+    color: red;
+  }
+  
