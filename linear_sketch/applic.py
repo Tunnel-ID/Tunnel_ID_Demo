@@ -11,9 +11,11 @@ from sklearn.decomposition import PCA
 import binascii
 import logging
 from dotenv import load_dotenv
-from preprocessing.face import decode_and_align_faces
+from preprocessing.face_landmark import FaceLandmarkProcessor
 import base64
 import json
+from PIL import Image
+from io import BytesIO
 
 load_dotenv()
 
@@ -26,7 +28,7 @@ logging.basicConfig(level=logging.INFO)
 # Initialize Flask app
 ##// Uncomment for production
 #app = Flask(__name__)
-app = Flask(__name__, static_folder="/home/canna/Documents/TunnelID/Tunnel-ID/Frontend/dist", static_url_path="")
+app = Flask(__name__, static_folder="/home/canna/Documents/TunnelID/Tunnel_ID_Demo/Frontend/dist", static_url_path="")
 #app = Flask(__name__)
 # Enable CORS
 # CORS(app, origins="http://localhost:5173")
@@ -414,8 +416,11 @@ def clear_facial_data():
     except Exception as e:
         print(f"Error in /admin/clear_facial_data: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
+    
+######### Face detection endpoint ###############################
 
-## Face detection endpoint
+
+
 @app.route("/process_face", methods=["POST", "OPTIONS"])
 def process_face():
     if request.method == "OPTIONS":
@@ -427,7 +432,7 @@ def process_face():
     try:
         data = request.get_json(force=True)
         print("Received data:", data)
-        # Check if the request contains image data  
+        
 
         if not data or "image" not in data:
             return jsonify({"status": "error", "message": "No image data provided"}), 400
@@ -435,12 +440,17 @@ def process_face():
         base64_image = data["image"]
         print("📥 Received base64 image of length:", len(base64_image))
 
-        embedding = decode_and_align_faces(base64_image)
+        image = process_image(base64_image)
+
+        processor = FaceLandmarkProcessor()
+        embedding = processor.process(image)
+
+        
         if embedding is None:
             print("❌ Returning error: No face detected.")
             return jsonify({"status": "error", "message": "No face detected"}), 400
         
-        
+        print(f"✅ Embedding extracted: dim={embedding.shape}, dtype={embedding.dtype}")
         
         return jsonify({
             "status": "success",
@@ -498,10 +508,10 @@ def save_facial_credentail():
             print(f"❌ Error decoding g_a or beta: {e}")
             return jsonify({"status": "error", "message": "Invalid g_a or beta format"}), 400
         
-        if len(g_a_bytes) != 65:
-            return jsonify({"status": "error", "message": "g_a must be 65 bytes"}), 400
-        if len(beta_bytes) != 32:
-            return jsonify({"status": "error", "message": "beta must be 32 bytes"}), 400
+        #if len(g_a_bytes) != 65:
+            #return jsonify({"status": "error", "message": "g_a must be 65 bytes"}), 400
+        #if len(beta_bytes) != 32:
+            #return jsonify({"status": "error", "message": "beta must be 32 bytes"}), 400
         print("✅ Successfully decoded g_a and beta")
 
         file_path = "facial_credential.csv"
@@ -513,7 +523,7 @@ def save_facial_credentail():
                 reader = csv.DictReader(file)
                 for row in reader:
                     if row["Wallet_Address"] == wallet_address:
-                        return jsonify({"status": "error", "message": "Wallet address already exists"}), 400
+                        return jsonify({"status": "error", "message": "Credentials already exists!!"}), 400
 
         # ✅ Append new credential
         file_exists = os.path.exists(file_path)
@@ -556,12 +566,18 @@ def get_facekey_by_wallet():
             for row in reader:
                 if row["Wallet_Address"] == tag:
                     print("✅ Facial credential found for wallet address:", tag)
+                    
+                    sketch_bytes = base64.b64decode(row["Sketch_Base64"])
+                    sketch_f64 = np.frombuffer(sketch_bytes, dtype=np.float64)
+                    dim = sketch_f64.size
+                    
                     return jsonify({
                         "status": "success",
                         "message": "Facial credential found",
                         "sketch_base64": row["Sketch_Base64"],
                         "g_a": row["g_a"],
-                        "beta": row["beta"]
+                        "beta": row["beta"],
+                        "dimension": dim
                     }), 200
                 
         print("❌ Facial credential not found for wallet address:", tag)
