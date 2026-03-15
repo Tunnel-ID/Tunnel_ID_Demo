@@ -1,0 +1,22 @@
+{
+  "created_at_epoch_s": 1772179704.1852267,
+  "model_versions": {
+    "aggregation": "weighted-mean-outlier@v1",
+    "encoder": "arcface:buffalo_l@v1",
+    "liveness": "passive+temporal+active@v1",
+    "preprocessing": "align112@v1"
+  },
+  "quality_metrics": {
+    "capture_to_decision_ms": 6186.414748000971,
+    "dropped_frames": 0.0,
+    "intra_session_variance": 0.0027089310534151425,
+    "mean_pose_error": 5.891686965397165,
+    "quality_score": 0.6598365880174587,
+    "used_frames": 5.0
+  },
+  "template_count": 1,
+  "template_qualities": [
+    0.6598365880174587
+  ],
+  "user_id": "bob"
+}

@@ -1,0 +1,31 @@
+passive_liveness:
+  min_texture_score: 0.16
+  min_lbp_score: 0.14
+  max_moire_score: 0.95
+  max_banding_score: 0.92
+  min_frequency_score: 0.12
+  min_specular_dynamic_score: 0.05
+
+temporal_liveness:
+  min_optical_flow_score: 0.02
+  min_flow_consistency_score: 0.08
+  min_blink_count: 1
+  min_micro_motion_score: 0.01
+  min_parallax_score: 0.01
+  use_rppg: false
+
+active_liveness:
+  enabled: true
+  prompts: ["BLINK_TWICE", "TURN_HEAD"]
+  response_timeout_s: 3.2
+  deterministic_prompt_seed: 2026
+  blink_required_count: 2
+  turn_min_delta_deg: 10.0
+
+liveness_fusion:
+  min_overall_confidence: 0.40
+  passive_temporal_min_confidence: 0.20
+  active_required: true
+  replay_moire_threshold: 0.97
+  replay_banding_threshold: 0.95
+  replay_specular_threshold: 0.03

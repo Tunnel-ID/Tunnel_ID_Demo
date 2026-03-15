@@ -1,0 +1,129 @@
+{
+  "version": "thresholds@v1",
+  "recommended": {
+    "tau_face": 0.9999479651451111,
+    "tau_face_policy": "security-first",
+    "score_type": "cosine",
+    "score_normalization": "raw",
+    "drift_bound_delta": 5.2034854888916016e-05,
+    "drift_bound_by_epsilon": {
+      "epsilon_0.01": 5.2034854888916016e-05,
+      "epsilon_0.02": 5.2034854888916016e-05,
+      "epsilon_0.05": 5.2034854888916016e-05
+    },
+    "quality_gate_threshold": 0.883,
+    "max_far_target": 0.0001,
+    "max_frr_target": 0.03,
+    "far_at_tau_face": 0.0,
+    "frr_at_tau_face": 0.0,
+    "pad": {
+      "APCER": 0.0,
+      "BPCER": 0.0,
+      "ACER": 0.0,
+      "attack_types": {
+        "attack_photo": {
+          "APCER": 0.0,
+          "n": 1.0
+        },
+        "attack_screen": {
+          "APCER": 0.0,
+          "n": 1.0
+        }
+      },
+      "n_attack": 2.0,
+      "n_bona_fide": 4.0
+    },
+    "drift": {
+      "intra_session": {
+        "count": 0.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "inter_session": {
+        "count": 2.0,
+        "mean": 5.2034854888916016e-05,
+        "std": 0.0,
+        "p95": 5.2034854888916016e-05,
+        "p99": 5.2034854888916016e-05,
+        "max": 5.2034854888916016e-05
+      },
+      "inter_device": {
+        "count": 2.0,
+        "mean": 5.2034854888916016e-05,
+        "std": 0.0,
+        "p95": 5.2034854888916016e-05,
+        "p99": 5.2034854888916016e-05,
+        "max": 5.2034854888916016e-05
+      }
+    },
+    "genuine_summary": {
+      "count": 2.0,
+      "mean": 0.9999479651451111,
+      "std": 0.0,
+      "p05": 0.9999479651451111,
+      "p50": 0.9999479651451111,
+      "p95": 0.9999479651451111
+    },
+    "impostor_summary": {
+      "count": 4.0,
+      "mean": 0.010203284211456776,
+      "std": 0.0072146237759924915,
+      "p05": 0.0015305324457585813,
+      "p50": 0.010203549638390541,
+      "p95": 0.018875664379447696
+    }
+  },
+  "calibration": {
+    "score_type": "cosine",
+    "normalization": "raw",
+    "policy": "security-first",
+    "threshold": {
+      "tau_face": 0.9999479651451111,
+      "far": 0.0,
+      "frr": 0.0
+    },
+    "eer": 0.0,
+    "eer_threshold": 0.9999479651451111,
+    "eer_ci": {
+      "low": 0.0,
+      "high": 0.0
+    },
+    "far_at_fixed_frr": {
+      "FRR_0.01": {
+        "frr": 0.0,
+        "far": 0.0,
+        "threshold": 0.9999479651451111
+      },
+      "FRR_0.02": {
+        "frr": 0.0,
+        "far": 0.0,
+        "threshold": 0.9999479651451111
+      },
+      "FRR_0.03": {
+        "frr": 0.0,
+        "far": 0.0,
+        "threshold": 0.9999479651451111
+      }
+    },
+    "frr_at_fixed_far": {
+      "FAR_0.001": {
+        "far": 0.0,
+        "frr": 1.0,
+        "threshold": Infinity
+      },
+      "FAR_0.0001": {
+        "far": 0.0,
+        "frr": 1.0,
+        "threshold": Infinity
+      },
+      "FAR_1e-05": {
+        "far": 0.0,
+        "frr": 1.0,
+        "threshold": Infinity
+      }
+    }
+  }
+}

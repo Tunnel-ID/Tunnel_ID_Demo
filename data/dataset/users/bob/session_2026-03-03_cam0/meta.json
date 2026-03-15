@@ -1,0 +1,15 @@
+{
+  "user_id": "bob",
+  "session_id": "session_2026-03-03_cam0",
+  "label": "attack_screen",
+  "device_id": "cam0",
+  "timestamp_epoch_s": 1772236800.0,
+  "liveness_pass": false,
+  "liveness_confidence": 0.2,
+  "quality_score": 0.35,
+  "similarity_to_enroll": 0.0,
+  "lighting": "indoor",
+  "distance": "near",
+  "glasses": "no",
+  "metadata": {}
+}

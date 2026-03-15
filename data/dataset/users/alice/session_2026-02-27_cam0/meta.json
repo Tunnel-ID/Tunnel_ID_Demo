@@ -1,0 +1,15 @@
+{
+  "user_id": "alice",
+  "session_id": "session_2026-02-27_cam0",
+  "label": "bona_fide",
+  "device_id": "cam0",
+  "timestamp_epoch_s": 1772236800.0,
+  "liveness_pass": true,
+  "liveness_confidence": 0.9,
+  "quality_score": 0.92,
+  "similarity_to_enroll": 0.0,
+  "lighting": "indoor",
+  "distance": "near",
+  "glasses": "no",
+  "metadata": {}
+}

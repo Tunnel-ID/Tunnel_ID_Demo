@@ -1,0 +1,42 @@
+capture:
+  required_poses: ["center", "yaw_left", "yaw_right", "pitch_up", "pitch_down"]
+  burst_size: 1
+  max_capture_seconds: 12.0
+  pose_tolerance_deg: 22.0
+  min_detection_confidence: 0.50
+
+quality:
+  min_sharpness: 15.0
+  min_exposure: 15.0
+  max_exposure: 240.0
+  max_occlusion_ratio: 0.75
+  max_motion_blur: 600.0
+
+aggregation:
+  min_frames_total: 5
+  max_outlier_cosine_distance: 0.60
+  max_intra_session_variance: 0.12
+
+passive_liveness:
+  min_texture_score: 0.10
+  min_lbp_score: 0.10
+  max_moire_score: 1.00
+  max_banding_score: 1.00
+  min_frequency_score: 0.05
+  min_specular_dynamic_score: 0.00
+
+temporal_liveness:
+  min_optical_flow_score: 0.005
+  min_flow_consistency_score: 0.00
+  min_blink_count: 0
+  min_micro_motion_score: 0.001
+  min_parallax_score: 0.00
+  use_rppg: false
+
+liveness_fusion:
+  min_overall_confidence: 0.20
+  passive_temporal_min_confidence: 0.05
+  active_required: true
+  replay_moire_threshold: 1.00
+  replay_banding_threshold: 1.00
+  replay_specular_threshold: -1.00

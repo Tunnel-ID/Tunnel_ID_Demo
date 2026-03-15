@@ -1,0 +1,81 @@
+capture:
+  required_poses: ["center", "yaw_left", "yaw_right", "pitch_up", "pitch_down"]
+  burst_size: 3
+  max_capture_seconds: 8.0
+  pose_tolerance_deg: 10.0
+  min_detection_confidence: 0.70
+
+quality:
+  min_sharpness: 90.0
+  min_exposure: 50.0
+  max_exposure: 205.0
+  max_occlusion_ratio: 0.25
+  max_motion_blur: 180.0
+
+pose_bands:
+  center_yaw: 0.0
+  center_pitch: 0.0
+  yaw_left: -25.0
+  yaw_right: 25.0
+  pitch_up: -18.0
+  pitch_down: 18.0
+
+embedding:
+  model_type: "insightface"
+  model_name: "buffalo_l"
+  det_size: 640
+  expected_dim: 512
+  min_cosine_similarity_match: 0.42
+
+aggregation:
+  min_frames_total: 5
+  max_outlier_cosine_distance: 0.35
+  max_intra_session_variance: 0.025
+
+passive_liveness:
+  min_texture_score: 0.22
+  min_lbp_score: 0.20
+  max_moire_score: 0.62
+  max_banding_score: 0.75
+  min_frequency_score: 0.18
+  min_specular_dynamic_score: 0.12
+
+temporal_liveness:
+  min_optical_flow_score: 0.08
+  min_flow_consistency_score: 0.18
+  min_blink_count: 1
+  min_micro_motion_score: 0.03
+  min_parallax_score: 0.05
+  use_rppg: false
+  min_rppg_score: 0.04
+
+active_liveness:
+  enabled: true
+  prompts: ["BLINK_TWICE", "TURN_HEAD"]
+  response_timeout_s: 3.0
+  deterministic_prompt_seed: 2026
+  blink_required_count: 2
+  turn_min_delta_deg: 12.0
+
+liveness_fusion:
+  min_overall_confidence: 0.55
+  passive_temporal_min_confidence: 0.35
+  active_required: true
+  replay_moire_threshold: 0.90
+  replay_banding_threshold: 0.85
+  replay_specular_threshold: 0.05
+  calibration_method: "none"
+
+evaluation:
+  default_frr_target: 0.05
+  spoof_label: "spoof"
+
+security:
+  allow_embedding_plaintext_logs: false
+  store_raw_images: false
+
+versions:
+  encoder: "arcface:buffalo_l@v1"
+  preprocessing: "align112@v1"
+  liveness: "passive+temporal+active@v1"
+  aggregation: "weighted-mean-outlier@v1"

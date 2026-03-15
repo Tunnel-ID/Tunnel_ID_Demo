@@ -1,0 +1,24 @@
+{
+  "created_at_epoch_s": 1772176843.3081238,
+  "model_versions": {
+    "aggregation": "weighted-mean-outlier@v1",
+    "encoder": "arcface:buffalo_l@v1",
+    "liveness": "passive+temporal+active@v1",
+    "preprocessing": "align112@v1"
+  },
+  "quality_metrics": {
+    "capture_to_decision_ms": 6055.924537002284,
+    "dropped_frames": 0.0,
+    "intra_session_variance": 0.000534101054916789,
+    "mean_pose_error": 5.375532467111671,
+    "quality_score": 0.6890607663836203,
+    "used_frames": 5.0
+  },
+  "template_count": 3,
+  "template_qualities": [
+    0.627624576661217,
+    0.6493796353173286,
+    0.6890607663836203
+  ],
+  "user_id": "alice"
+}
